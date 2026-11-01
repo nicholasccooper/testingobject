@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f1ea">
+<meta name="description" content="Meep meep meep meep meep meep meep meep.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<title>RIP Meep Memorial</title>
+<style>
+:root{--paper:#f4f1ed;--ink:#303b3a;--muted:#737c7a;--green:#596b67;--line:#dedfdb;--gold:#b5a084;--white:#fbfaf8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+.flower-sprinkle{position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden;opacity:.72}
+.flower{position:absolute;color:#b9a6b4;font-size:clamp(1rem,2vw,1.8rem);text-shadow:0 1px 2px rgba(255,255,255,.7);animation:flower-drift 7s ease-in-out infinite}
+.flower:nth-child(3n){color:#c6b58f;animation-delay:-2s}
+.flower:nth-child(3n + 1){color:#b5c4b5;animation-delay:-4s}
+.flower:nth-child(1){left:3%;top:13%}
+.flower:nth-child(2){left:91%;top:19%;font-size:1.4rem}
+.flower:nth-child(3){left:7%;top:43%}
+.flower:nth-child(4){left:95%;top:53%;font-size:1.2rem}
+.flower:nth-child(5){left:2%;top:72%;font-size:1.5rem}
+.flower:nth-child(6){left:88%;top:82%}
+.flower:nth-child(7){left:17%;top:92%;font-size:1.2rem}
+.flower:nth-child(8){left:78%;top:36%;font-size:1.5rem}
+.flower:nth-child(9){left:50%;top:7%;font-size:1.1rem}
+.flower:nth-child(10){left:66%;top:94%}
+@keyframes flower-drift{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-7px) rotate(7deg)}}
+@media(prefers-reduced-motion:reduce){.flower{animation:none}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Merriweather",Georgia,serif;line-height:1.8;font-weight:400}
+a{color:inherit}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.1rem clamp(1.25rem,5vw,5rem);border-bottom:1px solid var(--line);font-family:"Merriweather",Georgia,serif;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}
+.brand{font-weight:700;letter-spacing:.12em}
+.topbar nav{display:flex;gap:1.4rem;flex-wrap:wrap}
+.topbar nav a{text-decoration:none;color:var(--muted)}
+.hero{min-height:76vh;display:grid;place-items:center;text-align:center;padding:5rem 1.5rem 4.5rem;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 15%,#e4e9df 0,transparent 55%),var(--paper)}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid #c8d2c7;border-radius:50%;width:min(70vw,660px);aspect-ratio:1;opacity:.55;pointer-events:none}
+.hero:after{width:min(53vw,500px);border-color:#d7c7a8}
+.hero-inner{position:relative;z-index:1;max-width:760px}
+.eyebrow{font-family:"Merriweather",Georgia,serif;text-transform:uppercase;letter-spacing:.24em;font-size:.73rem;color:var(--green);font-weight:700}
+h1,h2,.memory-card h3{font-family:"Merriweather",Georgia,serif;font-weight:400} 
+h1{font-size:clamp(3.6rem,10vw,7.7rem);line-height:1.02;letter-spacing:-.035em;margin:1.1rem 0}
+.rule{width:62px;height:2px;background:var(--gold);margin:1.8rem auto}
+.hero p{font-size:clamp(1.1rem,2.2vw,1.4rem);color:var(--muted);max-width:550px;margin:0 auto}
+.keepsake{margin:2.1rem auto 0;max-width:260px}
+.keepsake img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;border:5px solid rgba(255,253,249,.75);box-shadow:0 12px 35px rgba(48,59,58,.12)}
+.keepsake figcaption{font-family:"Merriweather",Georgia,serif;color:var(--muted);font-size:.76rem;margin-top:.8rem;font-style:italic}
+.scroll-note{display:inline-block;margin-top:2rem;font-family:"Merriweather",Georgia,serif;text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;color:var(--muted);text-decoration:none}
+section{padding:5rem clamp(1.25rem,7vw,7rem)}
+.section-inner{max-width:980px;margin:auto}
+.section-label{font-family:"Merriweather",Georgia,serif;color:var(--green);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+h2{font-size:clamp(2.1rem,5vw,3.5rem);line-height:1.2;letter-spacing:-.025em;margin:.6rem 0 1.4rem}
+.intro{max-width:700px;font-size:1.18rem;color:#4f6057}
+.note{font-family:"Merriweather",Georgia,serif;font-size:.88rem;color:var(--muted);border-left:2px solid var(--gold);padding:.5rem 0 .5rem 1rem;margin-top:2rem}
+.memories{background:#e9eee7}
+.memory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.memory-card{background:var(--white);padding:1.5rem;min-height:190px;border:1px solid #e1e4dc}
+.memory-card .symbol{font-size:1.5rem;color:var(--gold)}
+.memory-card h3{font-weight:400;font-size:1.35rem;margin:.6rem 0}
+.memory-card p{font-family:"Merriweather",Georgia,serif;font-size:.9rem;color:var(--muted);margin:0}
+.testimonials{background:#e3e9e1}
+.attribution{font-family:"Merriweather",Georgia,serif;font-size:.76rem!important;color:var(--muted)!important;margin-top:1.1rem!important;font-style:italic}
+.share{background:var(--green);color:#fffdf9;text-align:center}
+.share .section-label{color:#e4d2ad}
+.share .section-inner{max-width:680px}
+.share p{color:#e4e9e3;font-size:1.08rem}
+.subscribe-button{display:inline-block;font:700 .86rem "Merriweather",Georgia,serif;letter-spacing:.04em;border:1px solid #e9e3d7;background:transparent;color:#fffdf9;padding:.9rem 1.2rem;margin-top:1rem;text-decoration:none;transition:background .2s,color .2s}
+.subscribe-button:hover{background:#fffdf9;color:var(--green)}
+.subscribe-note{font-size:.82rem!important;margin-top:1.2rem!important;color:#e4d2ad!important}
+footer{padding:2rem 1.25rem;text-align:center;font-family:"Merriweather",Georgia,serif;color:var(--muted);font-size:.78rem;letter-spacing:.04em}
+@media(max-width:680px){.topbar{align-items:flex-start;flex-direction:column}.topbar nav{gap:1rem}.hero{min-height:70vh}.memory-grid{grid-template-columns:1fr}.memory-card{min-height:auto}section{padding-top:3.8rem;padding-bottom:3.8rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="flower-sprinkle" aria-hidden="true">
+  <span class="flower">✿</span><span class="flower">✾</span><span class="flower">❀</span>
+  <span class="flower">✿</span><span class="flower">❁</span><span class="flower">✾</span>
+  <span class="flower">❀</span><span class="flower">✿</span><span class="flower">❁</span>
+  <span class="flower">✾</span>
+</div>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="Remembering Meep, home" style="text-decoration:none">In Memory</a>
+  <nav aria-label="Main navigation">
+    <a href="#story">His memory</a>
+    <a href="#testimonials">Meep stories</a>
+    <a href="#share">Leave a tribute</a>
+  </nav>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="eyebrow">Forever remembered</div>
+      <h1>Meep<br>Meep</h1>
+      <div class="rule"></div>
+      <p>Meep meep meep, meep meep meep meep meep.</p>
+      <figure class="keepsake">
+<img src="https://coin-images.coingecko.com/coins/images/36562/large/shark.jpeg?1715148291"></src>
+                <figcaption>A little character to bring a smile and keep close.</figcaption>
+      </figure>
+      <a class="scroll-note" href="#story">↓ &nbsp; Remembering Meep</a>
+    </div>
+  </section>
+  <section id="story">
+    <div class="section-inner">
+      <div class="section-label">A life remembered</div>
+      <h2>Meep meep meep.</h2>
+      <p class="intro">Meep meep meep meep meep meep meep meep meep meep meep meep meep meep meep.</p>
+      <p class="note">Meep meep, MEEP MEEP MEEP MEEP MEEP MEEP MEEP</p>
+    </div>
+  </section>
+  <section class="testimonials" id="testimonials">
+    <div class="section-inner">
+      <div class="section-label">The Meep stories</div>
+      <h2>Meep meep meep meep.</h2>
+      <p class="intro">Meep meep meep meep meep meep meep meep meep.</p>
+      
+      <div class="memory-grid">
+        <article class="memory-card">
+          <div class="symbol" aria-hidden="true">⚔</div>
+          <h3>“Meep meep meep meep meep.”</h3>
+          <p>Meep meep meep meep meep meep meep meep meep meep meep meep.</p>
+          <p class="attribution">— A Meeper</p>
+        </article>
+        <article class="memory-card">
+          <div class="symbol" aria-hidden="true">⌘</div>
+          <h3>“Meep meep meep meep meep meep.”</h3>
+          <p>Meep meep meep meep meep meep meep meep meep meep meep meep.</p>
+          <p class="attribution">— A Dumbass</p>
+        </article>
+        <article class="memory-card">
+          <div class="symbol" aria-hidden="true">★</div>
+          <h3>“Meep meep meep meep meep meep meep.”</h3>
+          <p>Meep meep meep meep meep meep meep meep meep meep.</p>
+          <p class="attribution">— Probably Cope</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="share" id="share">
+    <div class="section-inner">
+      <div class="section-label">One last request</div>
+      <h2>Subscribe for Meep.</h2>
+      <p>Meep meep meep meep meep meep meep.</p>
+      <a class="subscribe-button" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">Meep</a>
+      <p class="subscribe-note">RIP Meep Memorial ♡</p>
+    </div>
+  </section>
+</main>
+<footer>RIP Meep Memorial. Meep meep meep.</footer>
+
+</body>
+</html>
